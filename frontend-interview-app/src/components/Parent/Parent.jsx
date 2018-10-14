@@ -1,5 +1,6 @@
 import React from 'react';
 import KeyVal from '../KeyVal';
+import style from './Parent.scss'
 
 class Parent extends React.Component {
   constructor(props){
@@ -49,17 +50,19 @@ class Parent extends React.Component {
 
     render () {
       return(
-        <React.Fragment>
+        <section className={style.parent}>
           <header>This is the parent component</header>
-          <span>This is my header</span>
-          <button onClick={this.onClickAdd}> + </button>
-          <section>
-            {this.state.pairs.map((pair, i) => {
-                return <KeyVal id={pair.id} data={pair} onChange={this.onChange} onSubmit={this.onClickRemove} key={i}/>
-            })}
-          </section>
-          <button onClick={this.onSubmit}> Submit </button>
-        </React.Fragment>
+          <div>
+            <span>This is my header</span>
+            <button onClick={this.onClickAdd}> + </button>
+            <React.Fragment>
+              {this.state.pairs.map((pair, i) => {
+                  return <KeyVal id={pair.id} data={pair} onChange={this.onChange} onSubmit={this.onClickRemove} key={i}/>
+              })}
+            </React.Fragment>
+            <button onClick={this.onSubmit} className={style.submit}> Submit </button>
+          </div>
+        </section>
       )
     }
 };

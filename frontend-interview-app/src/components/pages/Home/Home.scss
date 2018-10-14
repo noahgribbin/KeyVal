@@ -1,6 +1,11 @@
 @import 'src/assets/styles/base/baseExport';
 
-.home {
-  height: 500px;
-  width: 100%;
+.home{
+  min-height: 500px;
+  width: 95%;
+  margin-top: 2.5vw;
+  margin: auto;
+  background: $grey;
+  color: $white;
+  border-radius: 5px;
 }
